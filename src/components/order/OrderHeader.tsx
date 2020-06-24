@@ -1,40 +1,79 @@
-import React, { Component } from "react";
+import React, { Component, useState, useEffect } from "react";
 import { PageHeader } from "antd";
 import { BrowserRouter as Router } from "react-router-dom";
 import "antd/dist/antd.css";
 import { Row, Col } from "antd";
 import { Typography } from "antd";
+import "../../css/order.css";
+import { Select } from "antd";
+const { Option } = Select;
+interface Company {
+  _id: string;
+  name: string;
+}
+const Company = [
+  {
+    _id: 232132132,
+    name: "minori",
+  },
+];
+//select option
+//select option
 const { Title } = Typography;
-
 const routes = [
   {
     path: "order",
     breadcrumbName: "Danh sách đơn hàng",
   },
 ];
-class OrderHeader extends Component {
-  render() {
-    return (
-      <Router>
-        <PageHeader
-          className="site-page-header"
-          title="Danh sách đơn hàng"
-          breadcrumb={{ routes }}
-        />
-          <Row className="ant-row-style">
-            <Col xs={2} sm={4} md={6} lg={8} xl={10}>
-              <Title level={3}>h3. Ant Design</Title>
-            </Col>
-            <Col xs={20} sm={16} md={12} lg={8} xl={4}>
-              Col
-            </Col>
-            <Col xs={2} sm={4} md={6} lg={8} xl={10}>
-              Col
-            </Col>
-          </Row>
-      </Router>
-    );
-  }
-}
+
+//select option
+const OrderHeader = (): JSX.Element => {
+  return (
+    <Router>
+      <PageHeader
+        className="site-page-header"
+        title="Danh sách đơn hàng"
+        breadcrumb={{ routes }}
+      />
+      <Row className="ant-row-style">
+        <Col span={6}>
+          <Title className="margin-top" level={4}>
+            Tìm thấy XX đơn hàng
+          </Title>
+        </Col>
+        <Col span={6}>
+          <Select
+            className="select-marginleft margin-top"
+            defaultValue="lucy"
+            allowClear
+          >
+            <Option value="lucy">Lucy</Option>
+          </Select>
+        </Col>
+        <Col span={6}>
+          {" "}
+          <Select
+            className="select-marginleft margin-top"
+            defaultValue="lucy"
+            allowClear
+          >
+            <Option value="lucy">Lucy</Option>
+          </Select>
+        </Col>
+        <Col span={6}>
+          {" "}
+          <Select
+            className="select-marginleft margin-top"
+            defaultValue="lucy"
+            allowClear
+          >
+            <Option value="lucy">Lucy</Option>
+          </Select>{" "}
+        </Col>
+      </Row>
+    </Router>
+  );
+};
 
 export default OrderHeader;

@@ -17,6 +17,7 @@
     "bootstrap": "^4.5.0",
     "icons": "^1.0.0",
     "node-sass": "^4.14.1",
+    "nodemon": "^2.0.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-highlight-words": "^0.16.0",
@@ -25,6 +26,8 @@
     "typescript": "~3.7.2"
   },
   "scripts": {
+    "build-css": "node-sass ./src/scss -o ./src/css",
+    "scss": "nodemon -e scss -x npm run build-css",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
