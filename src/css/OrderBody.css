@@ -1,2 +1,123 @@
-.product {
-  color: #333; }
+.products-order {
+  max-width: 450px; }
+  .products-order .products {
+    max-width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden; }
+    .products-order .products div {
+      display: flex;
+      margin-bottom: 8px; }
+    .products-order .products .product {
+      color: #333;
+      font-weight: 500;
+      display: inline-block;
+      width: calc(100% - 110px);
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      margin-bottom: 8px; }
+    .products-order .products .count-price {
+      width: 135px;
+      margin-left: 10px;
+      color: rgba(85, 85, 85, 0.89);
+      font-weight: 500; }
+      .products-order .products .count-price .cout {
+        margin-right: 10px; }
+      .products-order .products .count-price .price {
+        float: right; }
+
+.products-price-order {
+  max-width: 450px; }
+  .products-price-order .products-price {
+    max-width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden; }
+    .products-price-order .products-price div {
+      display: flex;
+      margin-bottom: 8px; }
+    .products-price-order .products-price .product-price {
+      color: #333;
+      font-weight: 500;
+      display: inline-block;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      margin-bottom: 8px; }
+
+.products-status-order {
+  max-width: 450px; }
+  .products-status-order .products-status {
+    max-width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden; }
+    .products-status-order .products-status div {
+      display: flex;
+      margin-bottom: 8px; }
+    .products-status-order .products-status .product-status {
+      color: #333;
+      font-weight: 500;
+      display: inline-block;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      margin-bottom: 6px; }
+      .products-status-order .products-status .product-status .is-payment {
+        width: 102px;
+        text-align: center; }
+      .products-status-order .products-status .product-status .is-delivery {
+        width: 102px;
+        text-align: center; }
+
+.product-status-order {
+  height: 36px;
+  margin-top: 10px;
+  padding-top: 10px; }
+
+.money-order {
+  border-top: 1px solid #ccc;
+  margin-top: 10px;
+  padding-top: 10px; }
+  .money-order label {
+    font-weight: 700;
+    color: #333; }
+
+.money-total-order {
+  border-top: 1px solid #ccc;
+  margin-top: 10px;
+  padding-top: 10px; }
+  .money-total-order .total-order {
+    font-weight: 500;
+    color: #333;
+    display: inline-block; }
+
+.status-products-line {
+  height: 49px; }
+
+.products-action-order {
+  max-width: 450px; }
+  .products-action-order .products-action {
+    max-width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden; }
+    .products-action-order .products-action div {
+      display: flex;
+      margin-bottom: 8px; }
+    .products-action-order .products-action .product-action {
+      color: #333;
+      font-weight: 500;
+      display: inline-block;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      margin-bottom: 6px; }
+      .products-action-order .products-action .product-action .is-payment {
+        width: 102px;
+        text-align: center; }
+      .products-action-order .products-action .product-action .is-delivery {
+        width: 102px;
+        text-align: center; }
+
+.product-action-order {
+  height: 36px;
+  margin-top: 10px;
+  padding-top: 10px; }
