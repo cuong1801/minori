@@ -6,6 +6,7 @@ import { Row, Col } from "antd";
 import { Typography } from "antd";
 import "../../css/order.css";
 import { Select } from "antd";
+import { ICompany} from "../../interfaces/ICompany"
 const { Option } = Select;
 interface Company {
   _id: string;

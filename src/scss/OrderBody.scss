@@ -138,16 +138,31 @@
       .is-payment {
         width: 102px;
         text-align: center;
+        cursor: pointer;
+      }
+      .is-payment:hover {
+        background-color: red;
+        color: white;
       }
       .is-delivery {
         width: 102px;
         text-align: center;
+        cursor: pointer;
+      }
+      .is-delivery:hover {
+        background-color: blue;
+        color: white;
+      }
+      .cancel-order {
+        cursor: pointer;
+      }
+      .cancel-order:hover {
+        background-color: orangered;
       }
     }
   }
 }
 .product-action-order {
-  // border-top: 1px solid #ccc;
   height: 36px;
   margin-top: 10px;
   padding-top: 10px;

@@ -112,10 +112,22 @@
       margin-bottom: 6px; }
       .products-action-order .products-action .product-action .is-payment {
         width: 102px;
-        text-align: center; }
+        text-align: center;
+        cursor: pointer; }
+      .products-action-order .products-action .product-action .is-payment:hover {
+        background-color: red;
+        color: white; }
       .products-action-order .products-action .product-action .is-delivery {
         width: 102px;
-        text-align: center; }
+        text-align: center;
+        cursor: pointer; }
+      .products-action-order .products-action .product-action .is-delivery:hover {
+        background-color: blue;
+        color: white; }
+      .products-action-order .products-action .product-action .cancel-order {
+        cursor: pointer; }
+      .products-action-order .products-action .product-action .cancel-order:hover {
+        background-color: orangered; }
 
 .product-action-order {
   height: 36px;
