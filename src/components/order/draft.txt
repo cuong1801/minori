@@ -50,11 +50,6 @@ const columns: any = [
     dataIndex: "products",
     key: "products",
     filters: product,
-    onFilter: (value: any, record: { products: any[] }) => {
-      console.log(value);
-      console.log('object :>> ', record.products.filter((product, index) => product.productId === value).length);
-      return record.products.filter((product, index) => product.productId === value).length === 1;
-    },
     render: (products: any[]) => (
       <>
         <div className="products-order">
@@ -227,18 +222,13 @@ const columns: any = [
     title: "Thành tiền SP",
     dataIndex: "totalAmount",
     key: "totalAmout",
-    filters: [
-      {
-        value: 14647500,
-        text: 14647500,
-      },
-    ],
+    filters: [{
+      value:14647500,
+      text :14647500
+    }],
     // defaultSortOrder: 'descend',
-    onFilter: (value: any, record: any) => {
-      console.log(record, value);
-      return record.totalAmount.indexOf(value) === 0;
-    },
-
+    onFilter: (value:any, record:any) => record.name.indexOf(value) === 0,
+    
     sorter: (a: any, b: any) => a.totalAmount - b.totalAmount,
   },
   {

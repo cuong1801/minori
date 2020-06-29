@@ -1,0 +1,62 @@
+import React from "react";
+import "antd/dist/antd.css";
+import { Table } from "antd";
+const name = [
+  {
+    value: "Nguyễn Quốc Cường",
+    text: "Nguyễn Quốc Cường",
+  },
+  {
+    value: "2323123",
+    text: "join",
+  },
+  {
+    value: "12123123123123",
+    text: "jan",
+  },
+];
+const columns: any = [
+  {
+    title: "name",
+    dataIndex: "customer",
+    key: "customer",
+    filters: [
+      {
+        value: "Nguyễn Quốc Cường",
+        text: "Nguyễn Quốc Cường",
+      },
+    ],
+    onFilter: (value: any, record: { customer: string | any }) => {
+      console.log(record, value);
+      return record.customer.fullName.indexOf(value) === 0;
+    },
+    sortDirections: ["descend"],
+    render: (customer: any) => <h1>{customer.fullName}</h1>,
+  },
+];
+
+const data = [
+  {
+    _id: "5ef5a495224cb8ba206f7299",
+
+    customer: {
+      fullName: "Đặng Quốc Cường",
+    },
+  },
+  {
+    _id: "5ef5a4952242cb8ba206f7299",
+
+    customer: {
+      fullName: "Nguyễn Quốc Cường",
+    },
+  },
+];
+
+function onChange(pagination: any, filters: any, sorter: any) {
+  console.log("params", pagination, filters, sorter);
+}
+
+const OrderBody = (): JSX.Element => {
+  return <Table columns={columns} dataSource={data} onChange={onChange} />;
+};
+export default OrderBody;

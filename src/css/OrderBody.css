@@ -42,7 +42,8 @@
       display: inline-block;
       white-space: nowrap;
       text-overflow: ellipsis;
-      margin-bottom: 8px; }
+      margin-bottom: 8px;
+      text-align: right; }
 
 .products-status-order {
   max-width: 450px; }

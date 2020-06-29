@@ -6,16 +6,59 @@ import { Row, Col } from "antd";
 import { Typography } from "antd";
 import "../../css/order.css";
 import { Select } from "antd";
-import { ICompany} from "../../interfaces/ICompany"
+import { DatePicker } from "antd";
+
+const { RangePicker } = DatePicker;
+
+// import { ICompany } from "../../interfaces/ICompany";
+
 const { Option } = Select;
+
+function onChange(value:any) {
+  console.log(value);
+}
+
+function onBlur() {
+  console.log("blur");
+}
+
+function onFocus() {
+  console.log("focus");
+}
+
+function onSearch(val: any) {
+  console.log("search:", val);
+}
 interface Company {
   _id: string;
   name: string;
 }
 const Company = [
   {
-    _id: 232132132,
+    _id: 2313123123123,
     name: "minori",
+  },
+  {
+    _id: 23211232131231231232132,
+    name: "Axon",
+  },
+  {
+    _id: 232133123123123132132,
+    name: "fsoft",
+  },
+];
+const Product = [
+  {
+    _id: 232132132,
+    name: "Yến xào",
+  },
+  {
+    _id: 232132132,
+    name: "Yến luộc",
+  },
+  {
+    _id: 232132132,
+    name: "Yến hấp",
   },
 ];
 //select option
@@ -32,45 +75,64 @@ const routes = [
 const OrderHeader = (): JSX.Element => {
   return (
     <Router>
-      <PageHeader
-        className="site-page-header"
-        title="Danh sách đơn hàng"
-        breadcrumb={{ routes }}
-      />
       <Row className="ant-row-style">
         <Col span={6}>
           <Title className="margin-top" level={4}>
-            Tìm thấy XX đơn hàng
+            Tìm thấy 2 đơn hàng
           </Title>
         </Col>
+
         <Col span={6}>
           <Select
-            className="select-marginleft margin-top"
-            defaultValue="lucy"
-            allowClear
+            showSearch
+            style={{ width: 200 }}
+            placeholder="Không chọn"
+            optionFilterProp="children"
+            onChange={(e) => onChange(e)}
+            onFocus={onFocus}
+            onBlur={onBlur}
+            onSearch={onSearch}
           >
-            <Option value="lucy">Lucy</Option>
+            <Option value="Không chọn">Không chọn</Option>
+
+            {Company.map((company) => {
+              return (
+                <>
+                  <Option value={company._id}>
+                    {company.name}
+                  </Option>
+                </>
+              );
+            })}
           </Select>
+          ,
         </Col>
         <Col span={6}>
           {" "}
           <Select
-            className="select-marginleft margin-top"
-            defaultValue="lucy"
-            allowClear
+            showSearch
+            style={{ width: 200 }}
+            placeholder="Không chọn"
+            optionFilterProp="children"
+            onChange={onChange}
+            onFocus={onFocus}
+            onBlur={onBlur}
+            onSearch={onSearch}
           >
-            <Option value="lucy">Lucy</Option>
+            <Option value="Không chọn">Không chọn</Option>
+
+            {Product.map((product) => {
+              return (
+                <>
+                  <Option value={product.name}>{product.name}</Option>
+                </>
+              );
+            })}
           </Select>
         </Col>
         <Col span={6}>
           {" "}
-          <Select
-            className="select-marginleft margin-top"
-            defaultValue="lucy"
-            allowClear
-          >
-            <Option value="lucy">Lucy</Option>
-          </Select>{" "}
+          <RangePicker />
         </Col>
       </Row>
     </Router>
